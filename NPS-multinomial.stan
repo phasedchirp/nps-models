@@ -13,5 +13,5 @@ model {
 }
 generated quantities {
     real score;
-    score <- sum(tail(theta[k],2)) - sum(head(theta[k],7));
+    score <- sum(tail(theta,2)) - sum(head(theta,7));
 }
