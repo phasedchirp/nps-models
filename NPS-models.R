@@ -44,7 +44,7 @@ npsOrdered <- sampling(stanModOrdered,data = scoresList,chains=5,iter=5000)
 round(summary(npsMultinomial,pars="score")$summary*100,2)[,c("mean","2.5%","97.5%")]
 round(summary(npsOrdered,pars="score")$summary*100,2)[,c("mean","2.5%","97.5%")]
 
-# and compare to a convenient analytic approximation:
+# and compare to a convenient analytic approximation (see http://stats.stackexchange.com/questions/18603):
 npsSD <- sqrt(pPro*(1-npsAll)^2 + pPas*(0-npsAll)^2 + pDet*(-1-npsAll)^2)
 npsSE <- npsSD/sqrt(length(scores$binned))
 round(c(100*(npsAll-npsSE),100*(npsAll+npsSE)),2)
