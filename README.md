@@ -3,7 +3,7 @@ Some code for calculating uncertainty in [Net Promoter Score](https://en.wikiped
 
 ## Contents:
 
-* NPS-multinomial.stan: Stan code modeling response proportions as a multinomial distribution. Makes some incorrect assumptions, but faster and less prone to sampling problems.
+* NPS-multinomial.stan: Stan code modeling response proportions as a multinomial distribution. Makes some incorrect assumptions (specifically that differences like 1 vs 2 are not distinct from differences like 1 vs 10), but faster and less prone to sampling problems.
 * NPS-multinomial-groups.stan: Same as above, but estimates proportions conditional on some group membership predictor
 * NPS-cumulative.stan: Stan code modeling responses using an ordered/cumulative logit model. Better assumption-wise and less of a hassle to incorporate non-categorical predictor variables. Throws some (usually harmless) warnings about rejected metropolis proposals.
 * NPS-models.R: R code for running models. Will require some editing to use.
